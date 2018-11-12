@@ -105,7 +105,7 @@ static int op_subtract(struct tokenStack *stack)
   int v1, v2;
   v1 = popInt(stack);
   v2 = popInt(stack);
-  pushInt(stack, v1-v2);
+  pushInt(stack, v2-v1);
   return(0);
 }
 
@@ -124,7 +124,7 @@ static int op_divide(struct tokenStack *stack)
   int v1, v2;
   v1 = popInt(stack);
   v2 = popInt(stack);
-  pushInt(stack, v1/v2);
+  pushInt(stack, v2/v1);
   return(0);
 }
 
@@ -211,8 +211,8 @@ static int op_swap(struct tokenStack *stack) {
 	int v2;
 	v1 = popInt(stack);
 	v2 = popInt(stack);
-	pushInt(stack, v2);
 	pushInt(stack, v1);
+	pushInt(stack, v2);
 	return 0;
 }
 
